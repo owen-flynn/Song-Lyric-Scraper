@@ -1,7 +1,3 @@
-import os
-import requests
-import json
-import base64
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
