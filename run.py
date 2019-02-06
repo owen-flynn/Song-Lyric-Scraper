@@ -9,12 +9,9 @@ def print_album_info(artist_name,song_title):
     spotify_client.appears_on(song_title,album_ids,sp)
 
 def main():
-    print("This program allows you to search for the lyrics of any song, " +
-    "you can also get a list of albums that the song appears on if you wish")
-
     client_access_token = os.environ.get('CLIENT_ACCESS_TOKEN')
-    artist_name = input("please enter an artist:\n")
-    song_title = input("please enter a song:\n")
+    artist_name = input("please enter an artist to search for:\n")
+    song_title = input("please enter a song to search for:\n")
     album_option = input("would you like album info for the song, yes or no ?:\n")
     song_data = genius_client.get_song_data(song_title,client_access_token)
     url = genius_client.get_url(artist_name,song_data)
