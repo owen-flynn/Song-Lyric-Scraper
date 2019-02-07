@@ -24,5 +24,5 @@ def scrape(url):
     page_source = requests.get(url).text
     soup = BeautifulSoup(page_source, "html.parser")
     lyrics = soup.find("div",class_="lyrics").get_text()
-    
+
     return lyrics
