@@ -23,6 +23,12 @@ def get_album_ids(song_data,artist_name,song_title):
 
     return ids
 
+def get_album_data(album_id,sp):
+    url = "https://api.spotify.com/v1/albums/" + album_id
+    response = sp.album(album_id)
+
+    return response
+
 def appears_on(song_title,album_ids,sp):
     print(song_title," appears on the following albums:")
 
@@ -31,9 +37,3 @@ def appears_on(song_title,album_ids,sp):
         data = get_album_data(album_id,sp)
         release_date = data["release_date"][:4]
         print(album,data["album_type"],release_date,data["label"])
-
-def get_album_data(album_id,sp):
-    url = "https://api.spotify.com/v1/albums/" + album_id
-    response = sp.album(album_id)
-
-    return response
