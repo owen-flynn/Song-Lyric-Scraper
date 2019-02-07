@@ -17,9 +17,9 @@ def get_album_ids(song_data,artist_name,song_title):
     ids = {}
     data = song_data["tracks"]["items"]
 
-    for i in range(0,len(data)):
-        if data[i]["artists"][0]["name"] == artist_name:
-            ids[data[i]["album"]["name"]] = data[i]["album"]["id"]
+    for song in data:
+        if song["artists"][0]["name"] == artist_name:
+            ids[song["album"]["name"]] = song["album"]["id"]
 
     return ids
 
