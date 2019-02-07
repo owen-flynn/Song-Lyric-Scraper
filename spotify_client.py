@@ -32,8 +32,10 @@ def get_album_data(album_id,sp):
 def appears_on(song_title,album_ids,sp):
     print(song_title," appears on the following albums:")
 
-    for album in album_ids:
-        album_id = album_ids[album]
+    for album , album_id in album_ids.items():
         data = get_album_data(album_id,sp)
+        album_type = data["album_type"]
         release_date = data["release_date"][:4]
-        print(album,data["album_type"],release_date,data["label"])
+        label = data["label"]
+
+        print(album,album_type,release_date,label)
