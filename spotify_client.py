@@ -37,12 +37,3 @@ def get_album_data(album_id,sp):
     response = sp.album(album_id)
 
     return response
-
-def get_track_list(album_data):
-    track_list = []
-    data = album_data["tracks"]["items"]
-
-    for i in range(len(data)):
-        track_list.append(data[i]["name"])
-
-    return track_list
